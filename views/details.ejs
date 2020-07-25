@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./layout/header'); -%>
+    <div>
+    <h3><%=data.title%></h3>
+    <img src="<%=data.image_url%>" alt="">
+    <p><%=data.overview%></p>
+
+
+    <form action="/update/<%=data.id%>?_method=put" method="POST">
+
+        <input type="text" name="title" value="<%=data.title%>" >
+        <input type="text" name="image_url" value="<%=data.image_url%>" >
+        <input type="text" name="overview" value="<%=data.overview%>" >
+        <input type="submit" value="update">
+        
+    
+    </form>
+    <form action="/delete/<%=data.id%>?_method=put" method="POST">
+        <input type="submit" value="delete">
+    </form>
+</div>
+</body>
+</html>
